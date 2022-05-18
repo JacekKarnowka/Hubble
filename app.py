@@ -1,3 +1,4 @@
+from typing import Type
 import plotly.graph_objects as go
 import pandas as pd
 import dash
@@ -38,26 +39,46 @@ SLIDER_WIDTH = Styles.SLIDER_WIDTH
 
 
 def get_coordinates(adress):
+    
+    if adress == '':
+        raise TypeError("Empty string!")
+
     payload = {"query": [adress], "country": "GB"}
 
     answer = requests.get(
         "http://api.positionstack.com/v1/forward?access_key=5f5a76367052b2f26966faf4cd307507",
         params=payload,
     )
-    if answer.status_code != 200:
+    if answer.status_code == 401:
+        raise TypeError("Unauthorized")
+
+    elif answer.status_code == 400:
+        raise TypeError("Bad Request")
+
+    elif answer.status_code != 200:
+        raise TypeError("Wrong value")
         return "Wrong value, try again!"
+
     parse_answer = json.loads(answer.text)
 
     latitude = parse_answer["data"][0]["latitude"]
     longitude = parse_answer["data"][0]["longitude"]
 
     coordinates = [latitude, longitude]
+
     return coordinates
 
 
 def generate_net(left_top, left_bottom, right_bottom, right_top):
-    const_value = 10
+    if len(left_top) != 2 or len(left_bottom) != 2 or len(right_bottom) != 2 or len(right_top) != 2:
+        raise TypeError("Not proper length of corners coordinations")
 
+    for corner in [left_top, left_bottom, right_bottom, right_bottom]:
+        for i in range(0, len(corner)):
+            if not isinstance(corner[i][0], int) and not isinstance(corner[i][0], float):
+                raise TypeError("Wrong coordinates (not a number)")
+
+    const_value = 10
     Lat = (left_top[0][0] - left_bottom[0][0]) / const_value
     Long = (left_top[1][0] - right_top[1][0]) / const_value
 
@@ -445,6 +466,9 @@ def figure_3():
 
 
 def get_distance(x1, y1, x2, y2):
+    for number in [x1, y1, x2, y2]:
+        if not isinstance(number, int) and not isinstance(number, float):
+            raise TypeError("Coordinates not a number!")
     earthRadius = 6371
     dist = (
         math.acos(
@@ -455,7 +479,7 @@ def get_distance(x1, y1, x2, y2):
         )
         * earthRadius
     )
-    return dist
+    return round(dist, 5)
 
 
 def figure_4(min_people=0, max_people=300, names_list=None):
