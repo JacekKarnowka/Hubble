@@ -43,3 +43,9 @@ After entering London address graph is updated and the predicted value is calcul
 - BeautifulSoup4,
 - Pandas.
 
+### Installation
+
+1. Clone this repository: git clone [git@github.com:gothinkster/productionready-django-api.git](https://github.com/JacekKarnowka/Hubble.git).
+2. Create a new virtualenv called venvHubble: python -m venv venvHubble.
+3. Activate venvHubble virtual enviroment, if all went well then your command line prompt should now start with (venvHubble).
+4. Run app.py file: python app.py
