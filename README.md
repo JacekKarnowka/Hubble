@@ -8,10 +8,10 @@ Hubble project is a HubbleHQ webscraping web application.
 Data for analysis was scrapped using Beautiful Soup from www.hubbleHQ.com for apartments to rent in London.
 Scrapped data was cleaned and filtrated using pandas python library, and visualized using dash with plotly and mapbox.
 
-In project created simple search apartment estimated price value, based on the prive of ten closest apartments to rent.
+In project created simple search apartment estimated price value, based on the price of ten closest apartments to rent.
 Entered adress is translated to coordinates using www.positionstack.com API request.
 
-Project final step was to deploy app on www.herokuapp.com.
+Finally, project was to deploy app on www.herokuapp.com.
 
 #### Project elements with screen shoots
 
@@ -45,8 +45,8 @@ After entering London address graph is updated and the predicted value is calcul
 
 ### Installation
 
-1. Clone this repository: git clone [git@github.com:gothinkster/productionready-django-api.git](https://github.com/JacekKarnowka/Hubble.git).
-2. Create a new virtualenv called venvHubble: python -m venv venvHubble.
+1. Clone this repository: `git clone https://github.com/JacekKarnowka/Hubble.git`.
+2. Create a new virtualenv called venvHubble: `python -m venv venvHubble`.
 3. Activate venvHubble virtual enviroment, if all went well then your command line prompt should now start with (venvHubble).
-4. Install packages: pip install -r requirements.txt.
-5. Run app.py file: python app.py
+4. Install packages: `pip install -r requirements.txt`.
+5. Run app.py file: `python app.py`
