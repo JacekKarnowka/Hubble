@@ -1,26 +1,26 @@
 ### Hubble data analysis
 
-#### Project description
-Hubble- Locals to rent in London.
-https://locals-to-rent-london.herokuapp.com
+#### Project describtion
+[Hubble- Locals to rent in London](https://locals-to-rent-london.herokuapp.com).
 
-Hubble project is a HubbleHQ webscraping web application.
-Data for analysis was scrapped using Beautiful Soup from www.hubbleHQ.com for apartments to rent in London.
+
+Hubble project is a HubbleHQ webscraping interactive dashboard.
+Data for analysis was scrapped using Beautiful Soup from [HubbleHQ](www.hubbleHQ.com) for apartments to rent in London.
 Scrapped data was cleaned and filtrated using pandas python library, and visualized using dash with plotly and mapbox.
 
-In project created simple search apartment estimated price value, based on the price of ten closest apartments to rent.
-Entered adress is translated to coordinates using www.positionstack.com API request.
+Created simple search box for apartment estimated price value, based on the price of ten closest apartments to rent.
+Entered adress is translated to coordinates using [positionstack](www.positionstack.com) API request.
 
-Finally, project was to deploy app on www.herokuapp.com.
+Finally, project app was to deployed on [Heroku](www.herokuapp.com).
 
-#### Project elements with screen shoots
+#### Project elements
 
 1. Apartments locations on map. Color indicates average price per person. Slider below plots allows to change price range and live update plot data.
 
 ![hubble_1_Easy-Resize com (2)](https://user-images.githubusercontent.com/95350394/167929043-49a0b68a-1855-4d0f-a16c-77859bee5493.jpg)
 
 
-2. Next plot shows office price depending on available workplaces and distance from the geografic center of London. Slider below allows to change number of workplaces.
+2. Next plot shows office price depending on available workplaces and distance from the geografical center of London. Slider below allows to change number of workplaces.
 
 ![hubble2_Easy-Resize com](https://user-images.githubusercontent.com/95350394/167929284-6cf80c63-6ac1-435c-b7c0-38a18099ff49.jpg)
 
